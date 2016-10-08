@@ -179,9 +179,9 @@ Then navigate to **Build Phases** > **+** > **New Copy Files Phase**. In the new
 
 ---
 
-### Manually add subproject
+### Manually add subproject using Carthage
 
-Finally, you can also integrate the Dropbox Swift SDK into your project manually with the help of Carthage. Please take the following steps:
+You can also integrate the Dropbox Swift SDK into your project manually with the help of Carthage. Please take the following steps:
 
 Create a `Cartfile` in your project with the same contents as the Cartfile listed in the [Carthage](#carthage) section of the README.
 
@@ -204,6 +204,28 @@ Then, in the Project Navigator in Xcode, select your project, and then navigate 
 
 Finally, to retrieve SwiftyDropbox's Alamofire dependency, drag the `Carthage/Checkouts/Alamofire/Alamofire.xcodeproj` project into your project (as you did with the SwiftyDropbox project). Then, in the Project Navigator in Xcode, select your project, and then navigate to your
 project's build target > **General** > **Embedded Binaries** > **+** and then add the `Alamofire.framework` file that has the same platform target as your build target.
+
+---
+
+### Manually add subproject
+
+#### Submodules and Dependencies
+
+Add the following url as a git submodule to your project and initialize the submodule:
+
+https://github.com/dropbox/SwiftyDropbox.git
+
+To pick up the dependency of Alamofire, do the same with this url:
+
+https://github.com/Alamofire/Alamofire.git
+
+##### Adding the Project files to your Xcode Project
+
+Once the submodule is initialied, drag the `SwiftyDropbox/Source/SwiftyDropbox/SwiftyDropbox.xcodeproj` file into your project as a subproject.
+
+Then, in the Project Navigator in Xcode, select your project, and then navigate to your project's build target > **General** > **Embedded Binaries** > **+** and then add the `SwiftyDropbox.framework` file that has the same platform target as your build target.
+
+Finally, to retrieve SwiftyDropbox's Alamofire dependency, drag the `Alamofire/Alamofire.xcodeproj` project into your project (as you did with the SwiftyDropbox project). Then, in the Project Navigator in Xcode, select your project, and then navigate to your project's build target > **General** > **Embedded Binaries** > **+** and then add the `Alamofire.framework` file that has the same platform target as your build target.
 
 ---
 
